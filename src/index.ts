@@ -1,5 +1,5 @@
 import McExplorer from "./McExplorer.vue";
-import McExplorerDataTable from "./McExplorerDataTable.vue";
+import McExplorerDatatable from "./McExplorerDatatable.vue";
 import McExplorerNoData from "./McExplorerNoData.vue";
 export type {
     DataFetchAlert, DataFetchAlertResult, DataField, DataStats, MainDataField, ObjectType, PermitSaveDelete,
@@ -7,5 +7,5 @@ export type {
 } from "./types.ts"
 
 export {
-    McExplorer, McExplorerDataTable, McExplorerNoData,
+    McExplorer, McExplorerDatatable, McExplorerNoData,
 }

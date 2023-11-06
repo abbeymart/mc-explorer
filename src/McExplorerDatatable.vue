@@ -23,7 +23,7 @@
             </a>
           </div>
           <div v-if="subItemsCount > 0">
-            <McDataTable id="mcItemTable"
+            <McExplorerDataTable id="mcItemTable"
                          :data-fetch-alert="dataFetchAlert!"
                          :data-fields="dataFields"
                          :data-items="subItems"
@@ -46,7 +46,7 @@
 import McExplorerMessage from "./McExplorerMessage.vue";
 import McExplorerNoData from "./McExplorerNoData.vue";
 import McExplorerTree from "./McExplorerTree.vue";
-import { McExplorerDataTable as McDataTable, McTableNoData } from "@mconnect/mc-data-table"
+import { McExplorerDataTable, McTableNoData } from "@mconnect/mc-data-table"
 
 import { computed, onMounted, provide, ref, unref, watch } from "vue";
 import type {
@@ -96,8 +96,8 @@ const props = withDefaults(defineProps<ExplorerPropsType>(), {
   },
   sortStyle              : () => {
     return {
-      asc : "fa fa-caret-up",
-      desc: "fa fa-caret-down",
+      asc : "keyboard_arrow_up",
+      desc: "keyboard_arrow_down",
     }
   },
   permittedEvents        : () => ["click", "mouseover", "mouseleave", "mouseenter"],

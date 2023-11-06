@@ -101,8 +101,8 @@ const props = withDefaults(defineProps<ExplorerPropsType>(), {
   },
   sortStyle              : () => {
     return {
-      asc : "fa fa-caret-up",
-      desc: "fa fa-caret-down",
+      asc : "keyboard_arrow_up",
+      desc: "keyboard_arrow_down",
     }
   },
   permittedEvents        : () => ["click", "mouseover", "mouseleave", "mouseenter"],

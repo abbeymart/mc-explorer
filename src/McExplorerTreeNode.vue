@@ -38,8 +38,8 @@ interface TreeNodeProps {
 
 const props = defineProps<TreeNodeProps>()
 
-const {uuidNullValue, computeIconStyle, closedIconName, openedIconName,} = useExplorer()
-const {defaultTableStyle, defaultSortStyle, isMessage, pageMessage} = useExplorer()
+const {computeIconStyle, closedIconName, openedIconName,} = useExplorer()
+const {isMessage, pageMessage} = useExplorer()
 const dataFields = inject<Array<DataField>>("mcDataFields", [])
 const mainDataField = inject<MainDataField>("mcMainField", {name: "name"})
 const parentDataField = inject<MainDataField>("mcParentField", {name: "parentId"})

@@ -8,32 +8,19 @@
 
 </style>
 
-<script lang="ts">
-import type { PropType } from "vue";
-import { defineComponent } from "vue";
-import type { ItemTaskType } from "../types";
+<script setup lang="ts">
+import { ref } from "vue";
+import type { ItemTaskType, } from "../types";
 
-export default defineComponent({
-  name : "DatatableDelete",
-  props: {
-    itemTask : {
-      type    : Function as PropType<ItemTaskType>,
-      required: true,
-    },
-    itemId   : {
-      type    : String,
-      required: true,
-    },
-    itemLabel: {
-      type   : String,
-      default: "",
-    }
-  },
-  setup(props) {
-    return {
-      deleteLabel: props.itemLabel || "Delete",
-    }
-  },
+interface DeletePropsType {
+  itemTask: ItemTaskType;
+  itemId: string;
+  itemLabel?: string;
+}
 
+const props = withDefaults(defineProps<DeletePropsType>(), {
+  itemLabel: "Delete",
 })
+
+const deleteLabel = ref(props.itemLabel)
 </script>

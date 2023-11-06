@@ -8,31 +8,21 @@
 
 </style>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 
-export default defineComponent({
-  name : "DatatableActive",
-  props: {
-    isActive     : {
-      type   : Boolean,
-      default: false,
-    },
-    activeLabel  : {
-      type   : String,
-      default: "",
-    },
-    inActiveLabel: {
-      type   : String,
-      default: "",
-    }
-  },
-  setup(props) {
-    return {
-      yesLabel: props.activeLabel || "Yes",
-      noLabel : props.inActiveLabel || "No",
-    }
-  },
+interface ActivePropsType {
+  isActive?: boolean;
+  activeLabel?: string;
+  inActiveLabel?: string;
+}
 
+const props = withDefaults(defineProps<ActivePropsType>(), {
+  isActive     : false,
+  activeLabel  : "Yes",
+  inActiveLabel: "No",
 })
+
+const yesLabel = ref(props.activeLabel)
+const noLabel = ref(props.inActiveLabel)
 </script>

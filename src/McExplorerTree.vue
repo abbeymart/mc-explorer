@@ -35,7 +35,7 @@ import { useExplorer } from "./useExplorer";
 import McExplorerTreeNode from "./McExplorerTreeNode.vue";
 
 const {uuidNullValue, computeIconStyle, closedIconName, openedIconName} = useExplorer()
-const {defaultTableStyle, defaultSortStyle, isMessage, pageMessage} = useExplorer()
+const {isMessage, pageMessage} = useExplorer()
 const dataFields = inject<Array<DataField>>("mcDataFields", [])
 const mainDataField = inject<MainDataField>("mcMainField", {name: "name"})
 const parentDataField = inject<MainDataField>("mcParentField", {name: "parentId"})

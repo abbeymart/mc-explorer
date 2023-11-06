@@ -8,32 +8,20 @@
 
 </style>
 
-<script lang="ts">
-import type { PropType } from "vue";
-import { defineComponent } from "vue";
-import type { ItemTaskType } from "../types";
+<script setup lang="ts">
+import { ref } from "vue";
+import type { ItemTaskType, ObjectType } from "../types";
 
-export default defineComponent({
-  name : "DatatableUpdate",
-  props: {
-    itemTask : {
-      type    : Function as PropType<ItemTaskType>,
-      required: true,
-    },
-    itemData : {
-      type    : Object,
-      required: true,
-    },
-    itemLabel: {
-      type   : String,
-      default: "",
-    }
-  },
-  setup(props) {
-    return {
-      updateLabel: props.itemLabel || "Update",
-    }
-  },
+interface UpdatePropsType {
+  itemTask: ItemTaskType;
+  itemData: ObjectType;
+  itemLabel?: string;
+}
 
+const props = withDefaults(defineProps<UpdatePropsType>(), {
+  itemLabel: "Update",
 })
+
+const updateLabel = ref(props.itemLabel)
+
 </script>

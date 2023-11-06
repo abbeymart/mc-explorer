@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-if="itemsCount < 1" class="w3-container w3-yellow">
-      <h4>... {{ noDataMessage }} ...</h4>
+      <h4>... {{ props.noDataMessage }} ...</h4>
     </div>
     <div v-else>
-      <h4>... {{ loadingDataMessage }} ...</h4>
+      <h4>... {{ props.loadingDataMessage }} ...</h4>
     </div>
   </div>
 </template>

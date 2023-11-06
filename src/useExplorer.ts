@@ -3,7 +3,7 @@ import type {
     DataFetchAlert, DataFetchAlertResult, DataField, DataStats, DataTableProps, GetRequestType, MainDataField,
     ObjectType, PermitSaveDelete, PermittedEvents, SortStyle, TableStyle, TaskUpdate,
 } from "./types";
-import type { ComputedStyle } from "@/components/app-shared/methods";
+import type { ComputedStyle } from "./methods";
 
 const defaultTableStyle: TableStyle = {
     table      : "w3-table w3-striped w3-border w3-bordered w3-hoverable",
@@ -11,8 +11,8 @@ const defaultTableStyle: TableStyle = {
     tableBody  : "w3-hover",
 }
 const defaultSortStyle: SortStyle = {
-    asc : "fa fa-caret-up",
-    desc: "fa fa-caret-down",
+    asc : "keyboard_arrow_up",
+    desc: "keyboard_arrow_down",
 }
 const defaultPageLimits: Array<number> = [10, 20, 30, 50, 100, 200]
 const defaultPermittedEvents: Array<PermittedEvents> = ["click", "mouseover", "mouseleave", "mouseenter"]
